@@ -19,6 +19,10 @@ This package relies on github.com/davecheney/godoc2md.
 
 
 
+## func Max
+<pre>func Max(a, b int) int</pre>
+
+
 ## func MaxInt
 <pre>func MaxInt(a, b int) int</pre>
 
@@ -57,6 +61,10 @@ This package relies on github.com/davecheney/godoc2md.
 
 ## func MaxUint8
 <pre>func MaxUint8(a, b uint8) uint8</pre>
+
+
+## func Min
+<pre>func Min(a, b int) int</pre>
 
 
 ## func MinInt

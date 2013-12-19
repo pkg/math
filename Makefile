@@ -1,4 +1,4 @@
-GOFILES=int.go int_test.go int8.go int8_test.go int16.go int16_test.go int32.go int32_test.go int64.go int64_test.go
+GOFILES=int.go int_test.go int8.go int8_test.go int16.go int16_test.go int32.go int32_test.go int64.go int64_test.go extra.go extra_test.go
 GOFILES+=uint.go uint_test.go uint8.go uint8_test.go uint16.go uint16_test.go uint32.go uint32_test.go uint64.go uint64_test.go
 
 all: gen test cov README.md
@@ -30,6 +30,9 @@ int32.go: int.go
 int64.go: int.go
 	gofmt -r 'MaxInt -> MaxInt64' $^ | gofmt -r 'MinInt -> MinInt64' | gofmt -r 'int -> int64' > $@
 
+extra.go: int.go
+	gofmt -r 'MaxInt -> Max' $^ | gofmt -r 'MinInt -> Min' > $@
+
 int8_test.go: int_test.go
 	gofmt -r 'MaxInt -> MaxInt8' $^ | gofmt -r 'MinInt -> MinInt8' | gofmt -r 'TestMaxInt -> TestMaxInt8' | gofmt -r 'TestMinInt -> TestMinInt8' | gofmt -r 'maxIntTests -> maxInt8Tests' | gofmt -r 'minIntTests -> minInt8Tests' | gofmt -r 'int -> int8' > $@
 
@@ -41,6 +44,9 @@ int32_test.go: int_test.go
 
 int64_test.go: int_test.go
 	gofmt -r 'MaxInt -> MaxInt64' $^ | gofmt -r 'MinInt -> MinInt64' | gofmt -r 'TestMaxInt -> TestMaxInt64' | gofmt -r 'TestMinInt -> TestMinInt64' | gofmt -r 'maxIntTests -> maxInt64Tests' | gofmt -r 'minIntTests -> minInt64Tests' | gofmt -r 'int -> int64' > $@
+
+extra_test.go: int_test.go
+	gofmt -r 'MaxInt -> Max' $^ | gofmt -r 'MinInt -> Min' | gofmt -r 'TestMaxInt -> TestMax' | gofmt -r 'TestMinInt -> TestMin' | gofmt -r 'maxIntTests -> maxTests' | gofmt -r 'minIntTests -> minTests' > $@
 
 uint.go: int.go
 	gofmt -r 'MaxInt -> MaxUint' $^ | gofmt -r 'MinInt -> MinUint' | gofmt -r 'int -> uint' > $@
