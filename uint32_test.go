@@ -16,7 +16,7 @@ func TestMaxUint32(t *testing.T) {
 	for i, tt := range maxUint32Tests {
 		got := MaxUint32(tt.a, tt.b)
 		if tt.want != got {
-			t.Errorf("%d: MaxUint(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
+			t.Errorf("%d: MaxUint32(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
 		}
 	}
 }
@@ -35,7 +35,7 @@ func TestMinUint32(t *testing.T) {
 	for i, tt := range minUint32Tests {
 		got := MinUint32(tt.a, tt.b)
 		if tt.want != got {
-			t.Errorf("%d: MinUint(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
+			t.Errorf("%d: MinUint32(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
 		}
 	}
 }

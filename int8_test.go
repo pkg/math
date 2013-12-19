@@ -18,7 +18,7 @@ func TestMaxInt8(t *testing.T) {
 	for i, tt := range maxInt8Tests {
 		got := MaxInt8(tt.a, tt.b)
 		if tt.want != got {
-			t.Errorf("%d: MaxInt(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
+			t.Errorf("%d: MaxInt8(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
 		}
 	}
 }
@@ -39,7 +39,7 @@ func TestMinInt8(t *testing.T) {
 	for i, tt := range minInt8Tests {
 		got := MinInt8(tt.a, tt.b)
 		if tt.want != got {
-			t.Errorf("%d: MinInt(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
+			t.Errorf("%d: MinInt8(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
 		}
 	}
 }

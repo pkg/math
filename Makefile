@@ -19,60 +19,60 @@ gen: $(GOFILES)
 	go fmt $^
 
 int8.go: int.go
-	gofmt -r 'MaxInt -> MaxInt8' $^ | gofmt -r 'MinInt -> MinInt8' | gofmt -r 'int -> int8' > $@
+	sed -e 's/Int/Int8/g' -e 's/int/int8/g' $^ > $@
 
 int16.go: int.go
-	gofmt -r 'MaxInt -> MaxInt16' $^ | gofmt -r 'MinInt -> MinInt16' | gofmt -r 'int -> int16' > $@
+	sed -e 's/Int/Int16/g' -e 's/int/int16/g' $^ > $@
 
 int32.go: int.go
-	gofmt -r 'MaxInt -> MaxInt32' $^ | gofmt -r 'MinInt -> MinInt32' | gofmt -r 'int -> int32' > $@
+	sed -e 's/Int/Int32/g' -e 's/int/int32/g' $^ > $@
 
 int64.go: int.go
-	gofmt -r 'MaxInt -> MaxInt64' $^ | gofmt -r 'MinInt -> MinInt64' | gofmt -r 'int -> int64' > $@
+	sed -e 's/Int/Int64/g' -e 's/int/int64/g' $^ > $@
 
 extra.go: int.go
-	gofmt -r 'MaxInt -> Max' $^ | gofmt -r 'MinInt -> Min' > $@
-
-int8_test.go: int_test.go
-	gofmt -r 'MaxInt -> MaxInt8' $^ | gofmt -r 'MinInt -> MinInt8' | gofmt -r 'TestMaxInt -> TestMaxInt8' | gofmt -r 'TestMinInt -> TestMinInt8' | gofmt -r 'maxIntTests -> maxInt8Tests' | gofmt -r 'minIntTests -> minInt8Tests' | gofmt -r 'int -> int8' > $@
-
-int16_test.go: int_test.go
-	gofmt -r 'MaxInt -> MaxInt16' $^ | gofmt -r 'MinInt -> MinInt16' | gofmt -r 'TestMaxInt -> TestMaxInt16' | gofmt -r 'TestMinInt -> TestMinInt16' | gofmt -r 'maxIntTests -> maxInt16Tests' | gofmt -r 'minIntTests -> minInt16Tests' | gofmt -r 'int -> int16' > $@
-
-int32_test.go: int_test.go
-	gofmt -r 'MaxInt -> MaxInt32' $^ | gofmt -r 'MinInt -> MinInt32 ' | gofmt -r 'TestMaxInt -> TestMaxInt32' | gofmt -r 'TestMinInt -> TestMinInt32' | gofmt -r 'maxIntTests -> maxInt32Tests' | gofmt -r 'minIntTests -> minInt32Tests' | gofmt -r 'int -> int32' > $@
-
-int64_test.go: int_test.go
-	gofmt -r 'MaxInt -> MaxInt64' $^ | gofmt -r 'MinInt -> MinInt64' | gofmt -r 'TestMaxInt -> TestMaxInt64' | gofmt -r 'TestMinInt -> TestMinInt64' | gofmt -r 'maxIntTests -> maxInt64Tests' | gofmt -r 'minIntTests -> minInt64Tests' | gofmt -r 'int -> int64' > $@
+	sed -e 's/Int//g' $^ > $@
 
 extra_test.go: int_test.go
-	gofmt -r 'MaxInt -> Max' $^ | gofmt -r 'MinInt -> Min' | gofmt -r 'TestMaxInt -> TestMax' | gofmt -r 'TestMinInt -> TestMin' | gofmt -r 'maxIntTests -> maxTests' | gofmt -r 'minIntTests -> minTests' > $@
+	sed -e 's/Int//g' $^ > $@
+
+int8_test.go: int_test.go
+	sed -e 's/Int/Int8/g' -e 's/int/int8/g' $^ > $@
+
+int16_test.go: int_test.go
+	sed -e 's/Int/Int16/g' -e 's/int/int16/g' $^ > $@
+
+int32_test.go: int_test.go
+	sed -e 's/Int/Int32/g' -e 's/int/int32/g' $^ > $@
+
+int64_test.go: int_test.go
+	sed -e 's/Int/Int64/g' -e 's/int/int64/g' $^ > $@
 
 uint.go: int.go
-	gofmt -r 'MaxInt -> MaxUint' $^ | gofmt -r 'MinInt -> MinUint' | gofmt -r 'int -> uint' > $@
+	sed -e 's/Int/Uint/g' -e 's/ int/ uint/g' $^ > $@
 
 uint8.go: uint.go
-	gofmt -r 'MaxUint -> MaxUint8' $^ | gofmt -r 'MinUint -> MinUint8' | gofmt -r 'uint -> uint8' > $@
+	sed -e 's/Uint/Uint8/g' -e 's/ uint/ uint8/g' $^ > $@
 
 uint16.go: uint.go
-	gofmt -r 'MaxUint -> MaxUint16' $^ | gofmt -r 'MinUint -> MinUint16' | gofmt -r 'uint -> uint16' > $@
+	sed -e 's/Uint/Uint16/g' -e 's/ uint/ uint16/g' $^ > $@
 
 uint32.go: uint.go
-	gofmt -r 'MaxUint -> MaxUint32' $^ | gofmt -r 'MinUint -> MinUint32' | gofmt -r 'uint -> uint32' > $@
+	sed -e 's/Uint/Uint32/g' -e 's/ uint/ uint32/g' $^ > $@
 
 uint64.go: uint.go
-	gofmt -r 'MaxUint -> MaxUint64' $^ | gofmt -r 'MinUint -> MinUint64' | gofmt -r 'uint -> uint64' > $@
+	sed -e 's/Uint/Uint64/g' -e 's/ uint/ uint64/g' $^ > $@
 
 uint8_test.go: uint_test.go
-	gofmt -r 'MaxUint -> MaxUint8' $^ | gofmt -r 'MinUint -> MinUint8' | gofmt -r 'TestMaxUint -> TestMaxUint8' | gofmt -r 'TestMinUint -> TestMinUint8' | gofmt -r 'maxUintTests -> maxUint8Tests' | gofmt -r 'minUintTests -> minUint8Tests' | gofmt -r 'uint -> uint8' > $@
+	sed -e 's/Uint/Uint8/g' -e 's/ uint/ uint8/g' $^ > $@
 
 uint16_test.go: uint_test.go
-	gofmt -r 'MaxUint -> MaxUint16' $^ | gofmt -r 'MinUint -> MinUint16' | gofmt -r 'TestMaxUint -> TestMaxUint16' | gofmt -r 'TestMinUint -> TestMinUint16' | gofmt -r 'maxUintTests -> maxUint16Tests' | gofmt -r 'minUintTests -> minUint16Tests' | gofmt -r 'uint -> uint16' > $@
+	sed -e 's/Uint/Uint16/g' -e 's/ uint/ uint16/g' $^ > $@
 
 uint32_test.go: uint_test.go
-	gofmt -r 'MaxUint -> MaxUint32' $^ | gofmt -r 'MinUint -> MinUint32' | gofmt -r 'TestMaxUint -> TestMaxUint32' | gofmt -r 'TestMinUint -> TestMinUint32' | gofmt -r 'maxUintTests -> maxUint32Tests' | gofmt -r 'minUintTests -> minUint32Tests' | gofmt -r 'uint -> uint32' > $@
+	sed -e 's/Uint/Uint32/g' -e 's/ uint/ uint32/g' $^ > $@
 
 uint64_test.go: uint_test.go
-	gofmt -r 'MaxUint -> MaxUint64' $^ | gofmt -r 'MinUint -> MinUint64' | gofmt -r 'TestMaxUint -> TestMaxUint64' | gofmt -r 'TestMinUint -> TestMinUint64' | gofmt -r 'maxUintTests -> maxUint64Tests' | gofmt -r 'minUintTests -> minUint64Tests' | gofmt -r 'uint -> uint64' > $@
+	sed -e 's/Uint/Uint64/g' -e 's/ uint/ uint64/g' $^ > $@
 
 .PHONEY: gen test cov

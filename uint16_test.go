@@ -16,7 +16,7 @@ func TestMaxUint16(t *testing.T) {
 	for i, tt := range maxUint16Tests {
 		got := MaxUint16(tt.a, tt.b)
 		if tt.want != got {
-			t.Errorf("%d: MaxUint(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
+			t.Errorf("%d: MaxUint16(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
 		}
 	}
 }
@@ -35,7 +35,7 @@ func TestMinUint16(t *testing.T) {
 	for i, tt := range minUint16Tests {
 		got := MinUint16(tt.a, tt.b)
 		if tt.want != got {
-			t.Errorf("%d: MinUint(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
+			t.Errorf("%d: MinUint16(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
 		}
 	}
 }

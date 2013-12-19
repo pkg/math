@@ -18,7 +18,7 @@ func TestMaxInt64(t *testing.T) {
 	for i, tt := range maxInt64Tests {
 		got := MaxInt64(tt.a, tt.b)
 		if tt.want != got {
-			t.Errorf("%d: MaxInt(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
+			t.Errorf("%d: MaxInt64(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
 		}
 	}
 }
@@ -39,7 +39,7 @@ func TestMinInt64(t *testing.T) {
 	for i, tt := range minInt64Tests {
 		got := MinInt64(tt.a, tt.b)
 		if tt.want != got {
-			t.Errorf("%d: MinInt(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
+			t.Errorf("%d: MinInt64(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
 		}
 	}
 }
