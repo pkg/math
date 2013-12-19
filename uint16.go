@@ -1,17 +1,31 @@
 package math
 
-// MaxUint16 returns the larger of two uint16s.
-func MaxUint16(a, b uint16) uint16 {
-	if a > b {
-		return a
+// MaxUint16 returns the largest uint16 in the set provided.
+// If no values are provided, MaxUint16 returns 0.
+func MaxUint16(v ...uint16) uint16 {
+	if len(v) == 0 {
+		return 0
 	}
-	return b
+	res := v[0]
+	for _, i := range v[1:] {
+		if i >= res {
+			res = i
+		}
+	}
+	return res
 }
 
-// MinUint16 returns the smaller of two uint16s.
-func MinUint16(a, b uint16) uint16 {
-	if a > b {
-		return b
+// MinUint16 returns the smallest uint16 in the set provided.
+// If no values are provided, MinUint16 returns 0.
+func MinUint16(v ...uint16) uint16 {
+	if len(v) == 0 {
+		return 0
 	}
-	return a
+	res := v[0]
+	for _, i := range v[1:] {
+		if i < res {
+			res = i
+		}
+	}
+	return res
 }

@@ -1,17 +1,31 @@
 package math
 
-// MaxInt32 returns the larger of two int32s.
-func MaxInt32(a, b int32) int32 {
-	if a > b {
-		return a
+// MaxInt32 returns the largest int32 in the set provided.
+// If no values are provided, MaxInt32 returns 0.
+func MaxInt32(v ...int32) int32 {
+	if len(v) == 0 {
+		return 0
 	}
-	return b
+	res := v[0]
+	for _, i := range v[1:] {
+		if i >= res {
+			res = i
+		}
+	}
+	return res
 }
 
-// MinInt32 returns the smaller of two int32s.
-func MinInt32(a, b int32) int32 {
-	if a > b {
-		return b
+// MinInt32 returns the smallest int32 in the set provided.
+// If no values are provided, MinInt32 returns 0.
+func MinInt32(v ...int32) int32 {
+	if len(v) == 0 {
+		return 0
 	}
-	return a
+	res := v[0]
+	for _, i := range v[1:] {
+		if i < res {
+			res = i
+		}
+	}
+	return res
 }

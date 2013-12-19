@@ -1,17 +1,31 @@
 package math
 
-// Max returns the larger of two ints.
-func Max(a, b int) int {
-	if a > b {
-		return a
+// Max returns the largest int in the set provided.
+// If no values are provided, Max returns 0.
+func Max(v ...int) int {
+	if len(v) == 0 {
+		return 0
 	}
-	return b
+	res := v[0]
+	for _, i := range v[1:] {
+		if i >= res {
+			res = i
+		}
+	}
+	return res
 }
 
-// Min returns the smaller of two ints.
-func Min(a, b int) int {
-	if a > b {
-		return b
+// Min returns the smallest int in the set provided.
+// If no values are provided, Min returns 0.
+func Min(v ...int) int {
+	if len(v) == 0 {
+		return 0
 	}
-	return a
+	res := v[0]
+	for _, i := range v[1:] {
+		if i < res {
+			res = i
+		}
+	}
+	return res
 }

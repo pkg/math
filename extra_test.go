@@ -3,43 +3,53 @@ package math
 import "testing"
 
 var maxTests = []struct {
-	a, b int
+	v    []int
 	want int
 }{
-	{0, 0, 0},
-	{1, 1, 1},
-	{1, 2, 2},
-	{2, 1, 2},
-	{-1, 1, 1},
-	{1, -1, 1},
+	{[]int{}, 0},
+	{[]int{0}, 0},
+	{[]int{-1}, -1},
+	{[]int{0, 0}, 0},
+	{[]int{1, 1}, 1},
+	{[]int{1, 2}, 2},
+	{[]int{2, 1}, 2},
+	{[]int{-1, 1}, 1},
+	{[]int{1, -1}, 1},
+	{[]int{-1, 0, 1}, 1},
+	{[]int{100, 42, 17, 2, 3}, 100},
 }
 
 func TestMax(t *testing.T) {
 	for i, tt := range maxTests {
-		got := Max(tt.a, tt.b)
+		got := Max(tt.v...)
 		if tt.want != got {
-			t.Errorf("%d: Max(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
+			t.Errorf("%d: Max(%v) = %v, want %v", i+1, tt.v, got, tt.want)
 		}
 	}
 }
 
 var minTests = []struct {
-	a, b int
+	v    []int
 	want int
 }{
-	{0, 0, 0},
-	{1, 1, 1},
-	{1, 2, 1},
-	{2, 1, 1},
-	{-1, 1, -1},
-	{1, -1, -1},
+	{[]int{}, 0},
+	{[]int{0}, 0},
+	{[]int{-1}, -1},
+	{[]int{0, 0}, 0},
+	{[]int{1, 1}, 1},
+	{[]int{1, 2}, 1},
+	{[]int{2, 1}, 1},
+	{[]int{-1, 1}, -1},
+	{[]int{1, -1}, -1},
+	{[]int{-1, 0, 1}, -1},
+	{[]int{100, 42, 17, 2, 3}, 2},
 }
 
 func TestMin(t *testing.T) {
 	for i, tt := range minTests {
-		got := Min(tt.a, tt.b)
+		got := Min(tt.v...)
 		if tt.want != got {
-			t.Errorf("%d: Min(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
+			t.Errorf("%d: Min(%v) = %v, want %v", i+1, tt.v, got, tt.want)
 		}
 	}
 }

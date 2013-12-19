@@ -49,30 +49,30 @@ int64_test.go: int_test.go
 	sed -e 's/Int/Int64/g' -e 's/int/int64/g' $^ > $@
 
 uint.go: int.go
-	sed -e 's/Int/Uint/g' -e 's/ int/ uint/g' $^ > $@
+	sed -e 's/Int/Uint/g' -e 's/ int/ uint/g' -e 's/\.int/\.uint/g' -e 's/\]int/\]uint/g' $^ > $@
 
 uint8.go: uint.go
-	sed -e 's/Uint/Uint8/g' -e 's/ uint/ uint8/g' $^ > $@
+	sed -e 's/Uint/Uint8/g' -e 's/ uint/ uint8/g' -e 's/\.uint/\.uint8/g' -e 's/\]uint/\]uint8/g' $^ > $@
 
 uint16.go: uint.go
-	sed -e 's/Uint/Uint16/g' -e 's/ uint/ uint16/g' $^ > $@
+	sed -e 's/Uint/Uint16/g' -e 's/ uint/ uint16/g' -e 's/\.uint/\.uint16/g' -e 's/\]uint/\]uint16/g' $^ > $@
 
 uint32.go: uint.go
-	sed -e 's/Uint/Uint32/g' -e 's/ uint/ uint32/g' $^ > $@
+	sed -e 's/Uint/Uint32/g' -e 's/ uint/ uint32/g' -e 's/\.uint/\.uint32/g' -e 's/\]uint/\]uint32/g' $^ > $@
 
 uint64.go: uint.go
-	sed -e 's/Uint/Uint64/g' -e 's/ uint/ uint64/g' $^ > $@
+	sed -e 's/Uint/Uint64/g' -e 's/ uint/ uint64/g' -e 's/\.uint/\.uint64/g' -e 's/\]uint/\]uint64/g' $^ > $@
 
 uint8_test.go: uint_test.go
-	sed -e 's/Uint/Uint8/g' -e 's/ uint/ uint8/g' $^ > $@
+	sed -e 's/Uint/Uint8/g' -e 's/ uint/ uint8/g' -e 's/\.uint/\.uint8/g' -e 's/\]uint/\]uint8/g' $^ > $@
 
 uint16_test.go: uint_test.go
-	sed -e 's/Uint/Uint16/g' -e 's/ uint/ uint16/g' $^ > $@
+	sed -e 's/Uint/Uint16/g' -e 's/ uint/ uint16/g' -e 's/\.uint/\.uint16/g' -e 's/\]uint/\]uint16/g' $^ > $@
 
 uint32_test.go: uint_test.go
-	sed -e 's/Uint/Uint32/g' -e 's/ uint/ uint32/g' $^ > $@
+	sed -e 's/Uint/Uint32/g' -e 's/ uint/ uint32/g' -e 's/\.uint/\.uint32/g' -e 's/\]uint/\]uint32/g' $^ > $@
 
 uint64_test.go: uint_test.go
-	sed -e 's/Uint/Uint64/g' -e 's/ uint/ uint64/g' $^ > $@
+	sed -e 's/Uint/Uint64/g' -e 's/ uint/ uint64/g' -e 's/\.uint/\.uint64/g' -e 's/\]uint/\]uint64/g' $^ > $@
 
 .PHONEY: gen test cov
