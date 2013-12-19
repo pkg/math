@@ -6,3 +6,10 @@ func MaxInt8(a, b int8) int8 {
 	}
 	return b
 }
+
+func MinInt8(a, b int8) int8 {
+	if a > b {
+		return b
+	}
+	return a
+}

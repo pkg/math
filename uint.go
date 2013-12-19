@@ -6,3 +6,10 @@ func MaxUint(a, b uint) uint {
 	}
 	return b
 }
+
+func MinUint(a, b uint) uint {
+	if a > b {
+		return b
+	}
+	return a
+}

@@ -22,3 +22,24 @@ func TestMaxInt16(t *testing.T) {
 		}
 	}
 }
+
+var minInt16Tests = []struct {
+	a, b int16
+	want int16
+}{
+	{0, 0, 0},
+	{1, 1, 1},
+	{1, 2, 1},
+	{2, 1, 1},
+	{-1, 1, -1},
+	{1, -1, -1},
+}
+
+func TestMinInt16(t *testing.T) {
+	for i, tt := range minInt16Tests {
+		got := MinInt16(tt.a, tt.b)
+		if tt.want != got {
+			t.Errorf("%d: MinInt(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
+		}
+	}
+}

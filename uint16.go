@@ -6,3 +6,10 @@ func MaxUint16(a, b uint16) uint16 {
 	}
 	return b
 }
+
+func MinUint16(a, b uint16) uint16 {
+	if a > b {
+		return b
+	}
+	return a
+}

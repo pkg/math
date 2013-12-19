@@ -6,3 +6,10 @@ func MaxInt32(a, b int32) int32 {
 	}
 	return b
 }
+
+func MinInt32(a, b int32) int32 {
+	if a > b {
+		return b
+	}
+	return a
+}

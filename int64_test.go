@@ -22,3 +22,24 @@ func TestMaxInt64(t *testing.T) {
 		}
 	}
 }
+
+var minInt64Tests = []struct {
+	a, b int64
+	want int64
+}{
+	{0, 0, 0},
+	{1, 1, 1},
+	{1, 2, 1},
+	{2, 1, 1},
+	{-1, 1, -1},
+	{1, -1, -1},
+}
+
+func TestMinInt64(t *testing.T) {
+	for i, tt := range minInt64Tests {
+		got := MinInt64(tt.a, tt.b)
+		if tt.want != got {
+			t.Errorf("%d: MinInt(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
+		}
+	}
+}
