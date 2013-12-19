@@ -1,5 +1,6 @@
 package math
 
+// MaxInt returns the larger of two ints.
 func MaxInt(a, b int) int {
 	if a > b {
 		return a
@@ -7,6 +8,7 @@ func MaxInt(a, b int) int {
 	return b
 }
 
+// MinInt returns the smaller of two ints.
 func MinInt(a, b int) int {
 	if a > b {
 		return b

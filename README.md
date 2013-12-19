@@ -21,90 +21,134 @@ This package relies on github.com/davecheney/godoc2md.
 
 ## func Max
 <pre>func Max(a, b int) int</pre>
+Max returns the larger of two ints.
+
 
 
 ## func MaxInt
 <pre>func MaxInt(a, b int) int</pre>
+MaxInt returns the larger of two ints.
+
 
 
 ## func MaxInt16
 <pre>func MaxInt16(a, b int16) int16</pre>
+MaxInt16 returns the larger of two int16s.
+
 
 
 ## func MaxInt32
 <pre>func MaxInt32(a, b int32) int32</pre>
+MaxInt32 returns the larger of two int32s.
+
 
 
 ## func MaxInt64
 <pre>func MaxInt64(a, b int64) int64</pre>
+MaxInt64 returns the larger of two int64s.
+
 
 
 ## func MaxInt8
 <pre>func MaxInt8(a, b int8) int8</pre>
+MaxInt8 returns the larger of two int8s.
+
 
 
 ## func MaxUint
 <pre>func MaxUint(a, b uint) uint</pre>
+MaxUint returns the larger of two uints.
+
 
 
 ## func MaxUint16
 <pre>func MaxUint16(a, b uint16) uint16</pre>
+MaxUint16 returns the larger of two uint16s.
+
 
 
 ## func MaxUint32
 <pre>func MaxUint32(a, b uint32) uint32</pre>
+MaxUint32 returns the larger of two uint32s.
+
 
 
 ## func MaxUint64
 <pre>func MaxUint64(a, b uint64) uint64</pre>
+MaxUint64 returns the larger of two uint64s.
+
 
 
 ## func MaxUint8
 <pre>func MaxUint8(a, b uint8) uint8</pre>
+MaxUint8 returns the larger of two uint8s.
+
 
 
 ## func Min
 <pre>func Min(a, b int) int</pre>
+Min returns the smaller of two ints.
+
 
 
 ## func MinInt
 <pre>func MinInt(a, b int) int</pre>
+MinInt returns the smaller of two ints.
+
 
 
 ## func MinInt16
 <pre>func MinInt16(a, b int16) int16</pre>
+MinInt16 returns the smaller of two int16s.
+
 
 
 ## func MinInt32
 <pre>func MinInt32(a, b int32) int32</pre>
+MinInt32 returns the smaller of two int32s.
+
 
 
 ## func MinInt64
 <pre>func MinInt64(a, b int64) int64</pre>
+MinInt64 returns the smaller of two int64s.
+
 
 
 ## func MinInt8
 <pre>func MinInt8(a, b int8) int8</pre>
+MinInt8 returns the smaller of two int8s.
+
 
 
 ## func MinUint
 <pre>func MinUint(a, b uint) uint</pre>
+MinUint returns the smaller of two uints.
+
 
 
 ## func MinUint16
 <pre>func MinUint16(a, b uint16) uint16</pre>
+MinUint16 returns the smaller of two uint16s.
+
 
 
 ## func MinUint32
 <pre>func MinUint32(a, b uint32) uint32</pre>
+MinUint32 returns the smaller of two uint32s.
+
 
 
 ## func MinUint64
 <pre>func MinUint64(a, b uint64) uint64</pre>
+MinUint64 returns the smaller of two uint64s.
+
 
 
 ## func MinUint8
 <pre>func MinUint8(a, b uint8) uint8</pre>
+MinUint8 returns the smaller of two uint8s.
+
 
 
 

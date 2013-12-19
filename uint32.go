@@ -1,5 +1,6 @@
 package math
 
+// MaxUint32 returns the larger of two uint32s.
 func MaxUint32(a, b uint32) uint32 {
 	if a > b {
 		return a
@@ -7,6 +8,7 @@ func MaxUint32(a, b uint32) uint32 {
 	return b
 }
 
+// MinUint32 returns the smaller of two uint32s.
 func MinUint32(a, b uint32) uint32 {
 	if a > b {
 		return b
