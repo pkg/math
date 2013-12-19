@@ -20,3 +20,22 @@ func TestMaxUint32(t *testing.T) {
 		}
 	}
 }
+
+var minUint32Tests = []struct {
+	a, b uint32
+	want uint32
+}{
+	{0, 0, 0},
+	{1, 1, 1},
+	{1, 2, 1},
+	{2, 1, 1},
+}
+
+func TestMinUint32(t *testing.T) {
+	for i, tt := range minUint32Tests {
+		got := MinUint32(tt.a, tt.b)
+		if tt.want != got {
+			t.Errorf("%d: MinUint(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
+		}
+	}
+}

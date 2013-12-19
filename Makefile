@@ -55,15 +55,15 @@ uint64.go: uint.go
 	gofmt -r 'MaxUint -> MaxUint64' $^ | gofmt -r 'MinUint -> MinUint64' | gofmt -r 'uint -> uint64' > $@
 
 uint8_test.go: uint_test.go
-	gofmt -r 'MaxUint -> MaxUint8' $^ | gofmt -r 'TestMaxUint -> TestMaxUint8' | gofmt -r 'maxUintTests -> maxUint8Tests' | gofmt -r 'uint -> uint8' > $@
+	gofmt -r 'MaxUint -> MaxUint8' $^ | gofmt -r 'MinUint -> MinUint8' | gofmt -r 'TestMaxUint -> TestMaxUint8' | gofmt -r 'TestMinUint -> TestMinUint8' | gofmt -r 'maxUintTests -> maxUint8Tests' | gofmt -r 'minUintTests -> minUint8Tests' | gofmt -r 'uint -> uint8' > $@
 
 uint16_test.go: uint_test.go
-	gofmt -r 'MaxUint -> MaxUint16' $^ | gofmt -r 'TestMaxUint -> TestMaxUint16' | gofmt -r 'maxUintTests -> maxUint16Tests' | gofmt -r 'uint -> uint16' > $@
+	gofmt -r 'MaxUint -> MaxUint16' $^ | gofmt -r 'MinUint -> MinUint16' | gofmt -r 'TestMaxUint -> TestMaxUint16' | gofmt -r 'TestMinUint -> TestMinUint16' | gofmt -r 'maxUintTests -> maxUint16Tests' | gofmt -r 'minUintTests -> minUint16Tests' | gofmt -r 'uint -> uint16' > $@
 
 uint32_test.go: uint_test.go
-	gofmt -r 'MaxUint -> MaxUint32' $^ | gofmt -r 'TestMaxUint -> TestMaxUint32' | gofmt -r 'maxUintTests -> maxUint32Tests' | gofmt -r 'uint -> uint32' > $@
+	gofmt -r 'MaxUint -> MaxUint32' $^ | gofmt -r 'MinUint -> MinUint32' | gofmt -r 'TestMaxUint -> TestMaxUint32' | gofmt -r 'TestMinUint -> TestMinUint32' | gofmt -r 'maxUintTests -> maxUint32Tests' | gofmt -r 'minUintTests -> minUint32Tests' | gofmt -r 'uint -> uint32' > $@
 
 uint64_test.go: uint_test.go
-	gofmt -r 'MaxUint -> MaxUint64' $^ | gofmt -r 'TestMaxUint -> TestMaxUint64' | gofmt -r 'maxUintTests -> maxUint64Tests' | gofmt -r 'uint -> uint64' > $@
+	gofmt -r 'MaxUint -> MaxUint64' $^ | gofmt -r 'MinUint -> MinUint64' | gofmt -r 'TestMaxUint -> TestMaxUint64' | gofmt -r 'TestMinUint -> TestMinUint64' | gofmt -r 'maxUintTests -> maxUint64Tests' | gofmt -r 'minUintTests -> minUint64Tests' | gofmt -r 'uint -> uint64' > $@
 
 .PHONEY: gen test cov
