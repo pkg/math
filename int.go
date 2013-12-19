@@ -3,29 +3,37 @@ package math
 // MaxInt returns the largest int in the set provided.
 // If no values are provided, MaxInt returns 0.
 func MaxInt(v ...int) int {
-	if len(v) == 0 {
+	switch len(v) {
+	case 0:
 		return 0
-	}
-	res := v[0]
-	for _, i := range v[1:] {
-		if i >= res {
-			res = i
+	case 1:
+		return v[0]
+	case 2:
+		if v[0] > v[1] {
+			return v[0]
 		}
+		return v[1]
+	default:
+		l := len(v) / 2
+		return MaxInt(MaxInt(v[:l]...), MaxInt(v[l:]...))
 	}
-	return res
 }
 
 // MinInt returns the smallest int in the set provided.
 // If no values are provided, MinInt returns 0.
 func MinInt(v ...int) int {
-	if len(v) == 0 {
+	switch len(v) {
+	case 0:
 		return 0
-	}
-	res := v[0]
-	for _, i := range v[1:] {
-		if i < res {
-			res = i
+	case 1:
+		return v[0]
+	case 2:
+		if v[0] < v[1] {
+			return v[0]
 		}
+		return v[1]
+	default:
+		l := len(v) / 2
+		return MinInt(MinInt(v[:l]...), MinInt(v[l:]...))
 	}
-	return res
 }
