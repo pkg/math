@@ -7,7 +7,7 @@ test: gen
 	go test .
 
 cov: test
-	$(eval TEMP:=$(shell tempfile))
+	$(eval TEMP:=$(shell mktemp cover.XXXXXXX))
 	go test -coverprofile=$(TEMP) .
 	go tool cover -func=$(TEMP)
 	rm $(TEMP)
