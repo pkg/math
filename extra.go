@@ -1,39 +1,49 @@
 package math
 
-// Max returns the largest int in the set provided.
+// Max returns the larger of two ints.
+func Max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+// Min returns the smaller of two ints.
+func Min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+// MaxN returns the largest int in the set provided.
 // If no values are provided, Max returns 0.
-func Max(v ...int) int {
+func MaxN(v ...int) int {
 	switch len(v) {
 	case 0:
 		return 0
 	case 1:
 		return v[0]
 	case 2:
-		if v[0] > v[1] {
-			return v[0]
-		}
-		return v[1]
+		return Max(v[0], v[1])
 	default:
 		l := len(v) / 2
-		return Max(Max(v[:l]...), Max(v[l:]...))
+		return MaxN(MaxN(v[:l]...), MaxN(v[l:]...))
 	}
 }
 
-// Min returns the smallest int in the set provided.
+// MinN returns the smallest int in the set provided.
 // If no values are provided, Min returns 0.
-func Min(v ...int) int {
+func MinN(v ...int) int {
 	switch len(v) {
 	case 0:
 		return 0
 	case 1:
 		return v[0]
 	case 2:
-		if v[0] < v[1] {
-			return v[0]
-		}
-		return v[1]
+		return Min(v[0], v[1])
 	default:
 		l := len(v) / 2
-		return Min(Min(v[:l]...), Min(v[l:]...))
+		return MinN(MinN(v[:l]...), MinN(v[l:]...))
 	}
 }

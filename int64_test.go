@@ -2,7 +2,7 @@ package math
 
 import "testing"
 
-var maxInt64Tests = []struct {
+var maxInt64NTests = []struct {
 	v    []int64
 	want int64
 }{
@@ -20,16 +20,16 @@ var maxInt64Tests = []struct {
 	{[]int64{100, 42, 17, 2, 3}, 100},
 }
 
-func TestMaxInt64(t *testing.T) {
-	for i, tt := range maxInt64Tests {
-		got := MaxInt64(tt.v...)
+func TestMaxInt64N(t *testing.T) {
+	for i, tt := range maxInt64NTests {
+		got := MaxInt64N(tt.v...)
 		if tt.want != got {
 			t.Errorf("%d: MaxInt64(%v) = %v, want %v", i+1, tt.v, got, tt.want)
 		}
 	}
 }
 
-var minInt64Tests = []struct {
+var minInt64NTests = []struct {
 	v    []int64
 	want int64
 }{
@@ -48,8 +48,8 @@ var minInt64Tests = []struct {
 }
 
 func TestMinInt64(t *testing.T) {
-	for i, tt := range minInt64Tests {
-		got := MinInt64(tt.v...)
+	for i, tt := range minInt64NTests {
+		got := MinInt64N(tt.v...)
 		if tt.want != got {
 			t.Errorf("%d: MinInt64(%v) = %v, want %v", i+1, tt.v, got, tt.want)
 		}

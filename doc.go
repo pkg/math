@@ -2,8 +2,8 @@
 // over all integer Go types.
 //
 // Almost all files in this package are automatically generated.
-// 
-// To regenerate this package 
+//
+// To regenerate this package
 //
 //     make -B
 //

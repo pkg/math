@@ -2,7 +2,7 @@ package math
 
 import "testing"
 
-var maxIntTests = []struct {
+var maxIntNTests = []struct {
 	v    []int
 	want int
 }{
@@ -20,16 +20,16 @@ var maxIntTests = []struct {
 	{[]int{100, 42, 17, 2, 3}, 100},
 }
 
-func TestMaxInt(t *testing.T) {
-	for i, tt := range maxIntTests {
-		got := MaxInt(tt.v...)
+func TestMaxIntN(t *testing.T) {
+	for i, tt := range maxIntNTests {
+		got := MaxIntN(tt.v...)
 		if tt.want != got {
 			t.Errorf("%d: MaxInt(%v) = %v, want %v", i+1, tt.v, got, tt.want)
 		}
 	}
 }
 
-var minIntTests = []struct {
+var minIntNTests = []struct {
 	v    []int
 	want int
 }{
@@ -48,8 +48,8 @@ var minIntTests = []struct {
 }
 
 func TestMinInt(t *testing.T) {
-	for i, tt := range minIntTests {
-		got := MinInt(tt.v...)
+	for i, tt := range minIntNTests {
+		got := MinIntN(tt.v...)
 		if tt.want != got {
 			t.Errorf("%d: MinInt(%v) = %v, want %v", i+1, tt.v, got, tt.want)
 		}
