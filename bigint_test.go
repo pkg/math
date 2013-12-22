@@ -50,3 +50,25 @@ func TestMaxBigInt(t *testing.T) {
 		}
 	}
 }
+
+var minBigIntTests = []struct {
+	a, b *big.Int
+	want *big.Int
+}{
+	{i(0), i(0), i(0)},
+	{i(1), i(1), i(1)},
+	{i(1), i(2), i(1)},
+	{i(2), i(1), i(1)},
+	{i(-2), i(1), i(-2)},
+	{i(-1), i(1), i(-1)},
+	{i(1), i(-1), i(-1)},
+}
+
+func TestMinBigInt(t *testing.T) {
+	for i, tt := range minBigIntTests {
+		got := MinBigInt(tt.a, tt.b)
+		if !EqualBigInt(tt.want, got) {
+			t.Errorf("%d: MinBigInt(%v, %v) = %v, want %v", i+1, tt.a, tt.b, got, tt.want)
+		}
+	}
+}

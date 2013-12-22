@@ -19,9 +19,21 @@ This package relies on github.com/davecheney/godoc2md.
 
 
 
+## func EqualBigInt
+<pre>func EqualBigInt(a, b *big.Int) bool</pre>
+EqualBigInt returns true if both *bit.Ints are equal
+
+
+
 ## func Max
 <pre>func Max(a, b int) int</pre>
 Max returns the larger of two ints.
+
+
+
+## func MaxBigInt
+<pre>func MaxBigInt(a, b *big.Int) *big.Int</pre>
+MaxBigInt returns the larger of the two *big.Ints
 
 
 
@@ -165,6 +177,12 @@ If no values are provided, MaxUint returns 0.
 ## func Min
 <pre>func Min(a, b int) int</pre>
 Min returns the smaller of two ints.
+
+
+
+## func MinBigInt
+<pre>func MinBigInt(a, b *big.Int) *big.Int</pre>
+MinBigInt returns the smaller of the two *big.Ints
 
 
 
