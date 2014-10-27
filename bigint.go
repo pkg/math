@@ -18,5 +18,5 @@ func MinBigInt(a, b *big.Int) *big.Int {
 	return b
 }
 
-// EqualBigInt returns true if both *bit.Ints are equal
+// EqualBigInt returns true if both *big.Ints are equal
 func EqualBigInt(a, b *big.Int) bool { return a.Cmp(b) == 0 }

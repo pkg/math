@@ -5,16 +5,16 @@ import (
 	"testing"
 )
 
-func r(n,d int64) *big.Rat { return big.NewRat(n,d) }
+func r(n, d int64) *big.Rat { return big.NewRat(n, d) }
 
 var equalBigRatTests = []struct {
 	a, b *big.Rat
 	want bool
 }{
-	{ r(1,2), r(1,2), true },
-	{ r(1,1), r(1,1), true },
-	{ r(1,2), r(2,4), true },
-	{ r(1,2), r(2,3), false },
+	{r(1, 2), r(1, 2), true},
+	{r(1, 1), r(1, 1), true},
+	{r(1, 2), r(2, 4), true},
+	{r(1, 2), r(2, 3), false},
 }
 
 func TestEqualBigRat(t *testing.T) {
@@ -30,10 +30,10 @@ var maxBigRatTests = []struct {
 	a, b *big.Rat
 	want *big.Rat
 }{
-	{ r(1,2), r(1,3), r(1,2) },
-	{ r(1,3), r(1,2), r(1,2) },
-	{ r(1,2), r(1,4), r(1,2) },
-	{ r(1,4), r(1,2), r(1,2) },
+	{r(1, 2), r(1, 3), r(1, 2)},
+	{r(1, 3), r(1, 2), r(1, 2)},
+	{r(1, 2), r(1, 4), r(1, 2)},
+	{r(1, 4), r(1, 2), r(1, 2)},
 }
 
 func TestMaxBigRat(t *testing.T) {
@@ -49,10 +49,10 @@ var minBigRatTests = []struct {
 	a, b *big.Rat
 	want *big.Rat
 }{
-	{ r(1,2), r(1,3), r(1,3) },
-	{ r(1,3), r(1,2), r(1,3) },
-	{ r(1,2), r(1,4), r(1,4) },
-	{ r(1,4), r(1,2), r(1,4) },
+	{r(1, 2), r(1, 3), r(1, 3)},
+	{r(1, 3), r(1, 2), r(1, 3)},
+	{r(1, 2), r(1, 4), r(1, 4)},
+	{r(1, 4), r(1, 2), r(1, 4)},
 }
 
 func TestMinBigRat(t *testing.T) {

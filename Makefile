@@ -1,6 +1,6 @@
 GOFILES=int.go int_test.go int8.go int8_test.go int16.go int16_test.go int32.go int32_test.go int64.go int64_test.go extra.go extra_test.go
 GOFILES+=uint.go uint_test.go uint8.go uint8_test.go uint16.go uint16_test.go uint32.go uint32_test.go uint64.go uint64_test.go
-GOFILES+=bigint.go bigrat.go
+GOFILES+=bigint.go bigint_test.go bigrat.go bigrat_test.go
 
 all: gen test cov README.md
 

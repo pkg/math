@@ -18,5 +18,5 @@ func MinBigRat(a, b *big.Rat) *big.Rat {
 	return b
 }
 
-// EqualBigRat returns true if both *bit.Ints are equal
+// EqualBigRat returns true if both *big.Rats are equal
 func EqualBigRat(a, b *big.Rat) bool { return a.Cmp(b) == 0 }
