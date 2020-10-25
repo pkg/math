@@ -137,6 +137,14 @@ MaxN returns the largest int in the set provided.
 If no values are provided, Max returns 0.
 
 
+## func MaxSliceIndex
+``` go
+func MaxSliceIndex(slice interface{}, less func(i, j int) bool) int
+```
+MaxSliceIndex returns the largest element index in the slice.
+If slice is empty, MaxSliceIndex returns -1
+
+
 ## func MaxUint
 ``` go
 func MaxUint(a, b uint) uint
@@ -314,6 +322,14 @@ func MinN(v ...int) int
 ```
 MinN returns the smallest int in the set provided.
 If no values are provided, Min returns 0.
+
+
+## func MinSliceIndex
+``` go
+func MinSliceIndex(slice interface{}, less func(i, j int) bool) int
+```
+MinSliceIndex returns the smallest element index in the slice.
+If slice is empty, MinSliceIndex returns -1
 
 
 ## func MinUint
